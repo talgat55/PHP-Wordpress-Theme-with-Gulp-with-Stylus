@@ -8,10 +8,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "gulp": "^3.9.1"
-  },
+  "license": "ISC", 
   "devDependencies": {
     "browser-sync": "^2.18.1",
     "del": "^2.2.2",
