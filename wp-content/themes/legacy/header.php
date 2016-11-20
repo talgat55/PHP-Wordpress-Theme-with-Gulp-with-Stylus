@@ -12,30 +12,52 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyfifteen' ); ?></a>
+<div id="page" class="hfeed site"> 
+ 
+		<header id="masthead" class="site-header" role="header">
+			<div class="container">
+				
+				<div id="logo"> <!-- logo -->
+					<a href="<?php  echo home_url(); ?>">
+						
+						<img src="<?php   echo get_template_directory_uri() . "/images/logo.png" ?>">
 
-	<div id="sidebar" class="sidebar">
-		<header id="masthead" class="site-header" role="banner">
-			<div class="site-branding">
-				<?php 
+					</a>
+				</div> <!-- end logo -->
 
-					if ( is_front_page() && is_home() ) : ?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php else : ?>
-						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					<?php endif;
+				<div id="navigation"> <!-- Start navigation-->
 
-					$description = get_bloginfo( 'description', 'display' );
-					if ( $description || is_customize_preview() ) : ?>
-						<p class="site-description"><?php echo $description; ?></p>
-					<?php endif;
-				?>
-				<button class="secondary-toggle"><?php _e( 'Menu and widgets', 'twentyfifteen' ); ?></button>
-			</div><!-- .site-branding -->
+					<?php if(has_nav_menu('header_nav')) { ?>
+						
+						<ul class="sf-menu">	
+					   	   <?php wp_nav_menu( ['theme_location' => 'header_nav'] ); ?>
+					    </ul>
+
+					<?php } else{
+
+
+						}	?>
+
+
+				</div><!-- end navigation -->
+				<div id="header-social-bar">
+					<ul class="social-bar-list">
+						<li class="social-bar-item">
+
+							<a href="#"></a>
+							
+						</li>
+					</ul>
+				</div>
+				<div id="header-search">
+					<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+						<input type="text" class="search-field" placeholder="<?php echo __('Search...', "light"); ?>" value="" name="s" title="<?php echo __('Search for:', "light"); ?>" />
+						<input type="submit" class="search-submit" value="<?php echo __('Search', "light"); ?>" />
+					</form>
+				</div>
+			
+			</div><!-- .site-container -->
 		</header><!-- .site-header -->
-
-		<?php get_sidebar(); ?>
-	</div><!-- .sidebar -->
+ 
 
 	<div id="content" class="site-content">

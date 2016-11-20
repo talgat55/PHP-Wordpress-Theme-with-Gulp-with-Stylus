@@ -51,8 +51,8 @@ function twentyfifteen_setup() {
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu',      'twentyfifteen' ),
-		'social'  => __( 'Social Links Menu', 'twentyfifteen' ),
+		'header_nav' => __( 'header Menu',      'light' ),
+		'social'  => __( 'Social Links Menu', 'light' ),
 	) );
 
 	/*
