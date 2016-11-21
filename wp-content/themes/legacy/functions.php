@@ -118,7 +118,7 @@ add_action( 'wp_head', 'twentyfifteen_javascript_detection', 0 );
  */
 function twentyfifteen_scripts() { 
   
-	wp_enqueue_style( 'light-style', get_stylesheet_uri() );
+	
   
  
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -138,3 +138,13 @@ function twentyfifteen_scripts() {
 add_action( 'wp_enqueue_scripts', 'twentyfifteen_scripts' );
   
   
+function light_main_styles() {	
+
+		 wp_enqueue_style( 'light-style', get_stylesheet_uri() );
+		 wp_enqueue_style( 'main-style', get_template_directory_uri() . '/css/index.css', '', '1.0.0' );  
+		 
+}
+
+add_action('wp_enqueue_scripts', 'light_main_styles');
+
+

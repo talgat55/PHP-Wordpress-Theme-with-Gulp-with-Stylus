@@ -184,3 +184,6 @@ textarea {
   -webkit-appearance: button;
   font: inherit;
 }
+.header__container {
+  width: 1100px;
+}

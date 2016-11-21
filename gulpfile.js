@@ -8,7 +8,7 @@ gulp.task('clean:build', function() {
 })
 
 gulp.task("build", function(){
-  return gulp.src('./wp-content/themes/legacy/stylus/index.styl')
+  return gulp.src('./wp-content/themes/legacy/desktop.blocks/index.styl')
     .pipe(stylus())
     .pipe(gulp.dest('./wp-content/themes/legacy/css/'));
 
@@ -16,7 +16,7 @@ gulp.task("build", function(){
  
 gulp.task('watch', function() {
 
-  gulp.watch('./wp-content/themes/legacy/stylus/*.*', gulp.series('build'));
+  gulp.watch('./wp-content/themes/legacy/desktop.blocks/*.*', gulp.series('build'));
  
 });
 
